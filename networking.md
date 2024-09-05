@@ -1,6 +1,7 @@
 # Cluster Networking
 
-- https://kubernetes.io/docs/concepts/cluster-administration/networking/#how-to-implement-the-kubernetes-network-model
+- [Networking Design Proposal 2017](https://github.com/kubernetes/design-proposals-archive/blob/main/network/networking.md)
+- [Kubernetes Networking Model](https://kubernetes.io/docs/concepts/cluster-administration/networking/#how-to-implement-the-kubernetes-network-model)
 
 Cluster networking is central to Kubernetes
 
@@ -21,7 +22,7 @@ Sharing requires that two application do not try to use the same ports.
 Coordinating ports at scale is very difficult.
 
 Dynamic port allocation introduces a lot of complication to the system.
-Rather than dealing with dynamic ports, Kubernetes takes a different 
+Rather than dealing with dynamic ports, Kubernetes takes a different
 approached outlined in the networking model document:
 - https://kubernetes.io/docs/concepts/services-networking/
 
@@ -36,7 +37,7 @@ Briefly:
 - every `pod` gets a unique cluster-wide IP address
     - No need to make explicit links between pods
     - No need to deal with mapping container ports to host ports
-- Pods can therefore be treated like VMs or physical hosts in 
+- Pods can therefore be treated like VMs or physical hosts in
   terms of port allocation, naming, service discovery, load balancing,
   application configuration, and migration.
 
@@ -50,7 +51,7 @@ For platforms that support pods running on the host network
 - when pods are attached to the host network of the node,
     - the pods can still communicate with
         - all other pods on all other nodes
-        - without NAT 
+        - without NAT
 
 # Services
 
@@ -58,6 +59,5 @@ For platforms that support pods running on the host network
 
 Services covers 2 of the 4 original networking problems listed at the top:
 
-- pod-to-service communications    
+- pod-to-service communications
 - external-to-service communications
-    

@@ -327,7 +327,7 @@ pod_security_evaluations_total{decision="deny",mode="enforce",policy_level="rest
 
 ```bash
 # for each pinniped namespace, we probably want a restricted default
-# this is 
+# this is
 # - pinniped-supervisor
 # - pinniped-concierge
 # - tanzu-system-auth
