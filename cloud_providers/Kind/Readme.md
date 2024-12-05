@@ -23,4 +23,6 @@ time kind create cluster --name 2021-june-4
 kubectl cluster-info --context kind-kind
 # delete the cluster
 kind delete cluster --name 2021-june-4
+# load an image directly 
+
 ```
