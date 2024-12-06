@@ -1,0 +1,66 @@
+# This certificate is pulled form
+# kind get kubeconfig --name <cluster-name> | yq e '.users[0].user.client-certificate-data'
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 8555633518757623135 (0x76bbb75b09f9355f)
+        Signature Algorithm: sha256WithRSAEncryption
+        # Kubernetes, in Kind, is our issuer
+        Issuer: CN=kubernetes
+        Validity
+            Not Before: Dec  5 18:54:49 2024 GMT
+            Not After : Dec  5 18:59:49 2025 GMT
+        # subject is cluster admins
+        # in older kube, you would also see system:masters group as O=system:masters
+        # but now system:masters is gone.
+        Subject: O=kubeadm:cluster-admins, CN=kubernetes-admin
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:db:e4:03:4b:b7:af:5b:99:c5:ba:cb:ac:e2:67:
+                    e2:0b:ee:ea:1f:b5:67:58:6d:a3:17:90:31:ca:38:
+                    36:3d:e1:34:77:ea:2d:ff:b2:f0:36:f2:dc:83:b1:
+                    00:32:f6:08:31:46:2f:b9:77:83:36:8f:c7:f1:92:
+                    a3:93:d2:62:37:fa:77:c2:6a:47:cd:2a:cc:5d:b7:
+                    d4:3a:1c:1c:3e:62:ac:a3:35:c6:8f:dc:41:6a:fb:
+                    55:f3:fc:19:b0:13:64:94:a6:1c:cb:82:67:d7:d0:
+                    14:1e:dc:5e:4f:30:af:76:d3:69:69:87:fb:b2:0a:
+                    7a:c6:0f:95:16:a6:54:95:52:51:8c:7d:4d:7e:5a:
+                    ad:b2:f1:7b:3f:2f:29:1e:ea:79:61:68:a8:1a:56:
+                    a2:f8:7e:e6:f2:c2:eb:ac:ec:73:78:ac:d0:e3:98:
+                    46:e4:82:91:e9:49:31:e7:aa:43:99:75:e1:2b:25:
+                    5b:2a:b7:ab:1f:f9:35:98:b0:88:84:bd:af:96:d1:
+                    3e:90:af:c2:c0:ec:87:6d:df:65:da:d4:7a:17:c2:
+                    f5:27:d3:5c:6d:b7:f8:ba:7f:a6:ac:50:f2:4e:be:
+                    c6:42:21:09:76:84:16:ee:31:8a:95:86:87:34:b6:
+                    68:76:67:9a:61:6b:8f:40:cd:56:c3:00:2b:49:84:
+                    47:75
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Basic Constraints: critical
+                # this is not a CA
+                CA:FALSE
+            X509v3 Authority Key Identifier: 
+                A7:14:FB:EF:8E:B1:3E:3C:A8:33:53:D0:8C:98:06:68:88:BB:46:53
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        6f:ed:74:e9:e1:c6:3c:b7:e3:97:4c:35:6c:26:c4:e5:1f:34:
+        ea:de:95:dd:5f:86:2b:84:53:fe:c9:d8:69:ae:8a:9d:7f:f2:
+        c8:82:77:87:2b:73:57:af:02:4a:d2:56:a2:30:2b:5a:30:5a:
+        12:7c:c7:cc:28:8a:de:ba:c0:9c:08:6e:f6:6c:40:25:a9:60:
+        12:3b:97:e9:03:12:3e:11:ff:7d:18:0d:3a:ab:11:be:a2:77:
+        1a:5c:6d:38:a4:21:a7:bf:a0:43:fc:cc:35:4c:e6:83:f0:63:
+        0e:86:bd:62:d7:cd:ae:34:39:5f:92:db:f2:eb:ed:35:1c:e5:
+        f6:2c:1d:da:3b:45:70:6c:9e:6e:ea:18:67:64:6b:77:18:52:
+        a2:30:1b:bd:0e:6f:23:51:fd:29:c5:fb:10:da:1b:ac:cb:38:
+        84:0e:ed:e9:07:03:dc:e2:c2:7b:f1:63:f2:2c:02:b1:9b:a2:
+        d6:c1:2e:89:e6:2f:be:cf:e4:dd:e5:18:f5:19:84:8f:97:ea:
+        01:4f:b4:55:ce:3a:fa:22:45:90:45:3a:41:14:65:11:8e:fa:
+        e8:c6:47:38:8e:3b:a3:01:8b:70:f6:f4:c4:60:a4:88:ce:2e:
+        c6:43:2d:cc:ba:65:6e:d2:71:ab:b3:ce:66:05:5d:64:bb:27:
+        2f:6c:b5:54
